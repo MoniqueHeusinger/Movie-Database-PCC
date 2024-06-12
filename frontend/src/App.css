@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================
+      Generals
+============================== */
+@layer base {
+    @font-face {
+        font-family: "Poppins-Th";
+        src: url("./assets/fonts/Poppins-Thin.ttf");
+    }
+
+    @font-face {
+        font-family: "Poppins-ThIt";
+        src: url("./assets/fonts/Poppins-ThinItalic.ttf");
+    }
+
+    @font-face {
+        font-family: "Poppins-Rg";
+        src: url("./assets/fonts/Poppins-Regular.ttf");
+    }
+
+    @font-face {
+        font-family: "Poppins-Bd";
+        src: url("./assets/fonts/Poppins-Bold.ttf");
+    }
+
+    @font-face {
+        font-family: "Poppins-SBd";
+        src: url("./assets/fonts/Poppins-SemiBold.ttf");
+    }
+
+    @font-face {
+        font-family: "Poppins-Lg";
+        src: url("./assets/fonts/Poppins-Light.ttf");
+    }
+
+    @font-face {
+        font-family: "Poppins-XLg";
+        src: url("./assets/fonts/Poppins-ExtraLight.ttf");
+    }
+
+    @font-face {
+        font-family: "Poppins-XLgIt";
+        src: url("./assets/fonts/Poppins-ExtraLightItalic.ttf");
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --primary: #242424;
+        --secondary: white;
+        --highlight: #FD0054;
+        font-family: "Poppins-Rg";
+    }
+
+    body {
+        background-color: var(--primary);
+        color: var(--secondary);
+    }
+
+    a {
+        font-family: inherit;
+        text-decoration: none;
+    }
+}
