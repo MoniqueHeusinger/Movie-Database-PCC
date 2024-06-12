@@ -18,7 +18,8 @@ export default {
         poppinsThItalic: "Poppins-ThIt",
         poppinsBd: "Poppins-Bd",
         poppinsSBd: "Poppins-SBd",
-      }
+      },
+      display: ["group-hover"]
     },
   },
   plugins: [],
