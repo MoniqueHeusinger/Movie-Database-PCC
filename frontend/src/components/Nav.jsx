@@ -5,15 +5,15 @@ import { NavLink, Link } from "react-router-dom";
 const Nav = () => {
     return (
         <>
-            <div className="px-20 py-8 flex justify-between items-center">
-                <div className="flex">
+            <section className="px-20 py-8 flex justify-between items-center">
+                <article className="flex">
                     <Link to="/"><img src={popcornIcon} alt="" className="size-12" /></Link>
                     <div>
                         <p className="text-xs/4">Popcorn</p>
                         <p className="text-xs/4">Cinema</p>
                         <p className="text-xs/4">Central</p>
                     </div>
-                </div>
+                </article>
 
                 <nav>
                     <ul className="flex gap-10">
@@ -24,7 +24,7 @@ const Nav = () => {
                         <li className="pl-8 border-l-2"><Link className=""><img src={magnifyingGlass} alt="Search" className="ml-2 size-5 " /></Link></li>
                     </ul>
                 </nav>
-            </div>
+            </section>
         </>);
 }
 
