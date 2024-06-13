@@ -18,7 +18,7 @@ const Nav = () => {
                 <nav>
                     <ul className="flex gap-10">
                         <li><NavLink to="/" className="pb-2 hover:border-b-2">Home</NavLink></li>
-                        <li><NavLink to="/new-movies" className="pb-2 hover:border-b-2">New Movies</NavLink></li>
+                        {/* <li><NavLink to="/new-movies" className="pb-2 hover:border-b-2">New Movies</NavLink></li> */}
                         <li><NavLink to="/top-twenty" className="pb-2 hover:border-b-2">Top 20</NavLink></li>
                         <li><NavLink to="/genres" className="mr-2 pb-2 hover:border-b-2">Genres</NavLink></li>
                         <li><NavLink to="/coming-soon" className="mr-2 pb-2 hover:border-b-2">Coming soon</NavLink></li>
