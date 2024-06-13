@@ -5,6 +5,7 @@ import NewMovies from './pages/NewMovies';
 import TopTwentyMoviesList from './pages/TopTwentyMoviesList';
 import Genres from './pages/Genres';
 import ComingSoon from './pages/ComingSoon';
+import MovieDetails from './pages/MovieDetails';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/top-twenty" element={<TopTwentyMoviesList />} />
           <Route path="/genres" element={<Genres />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
         </Routes>
       </BrowserRouter>
 

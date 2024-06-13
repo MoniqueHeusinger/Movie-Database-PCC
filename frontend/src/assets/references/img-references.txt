@@ -6,4 +6,9 @@ Lupe icon:
 
 Movie Background Test:
 <a href="https://unsplash.com/de/@reganography?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Samuel Regan-Asante</a> auf <a href="https://unsplash.com/de/fotos/the-walking-dead-dvd-film-wMkaMXTJjlQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-  
+
+Stern icon:
+<a target="_blank" href="https://icons8.com/icon/7856/star">Stern</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a>
+
+Popcorn animated:
+<a href="https://www.flaticon.com/free-animated-icons/cinema" title="cinema animated icons">Cinema animated icons created by Freepik - Flaticon</a>
