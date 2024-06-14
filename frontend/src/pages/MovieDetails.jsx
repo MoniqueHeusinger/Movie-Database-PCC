@@ -78,14 +78,15 @@ const MovieDetails = () => {
                         {/* Title - genre - rating - release year */}
                         <article className=" pt-36 pb-10">
                             <h1 className="text-5xl font-poppinsSBd leading-loose">{movie.node.titleText.text}</h1>
-                            <div className="flex md:flex-row sm:flex-col sm:items-start md:justify-between md:items-center lg:max-w-2xl w-2/3 sm:w-full font-poppinsLg">
+                            {/* --- genres --- */}
+                            <div className="flex md:flex-row sm:flex-col sm:items-start md:justify-between md:items-center lg:max-w-2xl w-2/3 sm:w-full font-poppinsLg gap-4">
                                 <p className="">{movie.node.titleGenres.genres.map(genre => genre.genre.text).join(" / ")}</p>
-
-
+                                {/* --- rating --- */}
                                 <div className="flex gap-1 sm:my-3">
                                     <img src={starIcon} alt="" className="w-3.5 h-3.5" />
                                     <p className=" leading-none">8</p>
                                 </div>
+                                {/* --- release year --- */}
                                 <p>{movie.node.releaseDate.year}</p>
                             </div>
                         </article>

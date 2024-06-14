@@ -1,26 +1,30 @@
+import { useNavigate } from "react-router-dom";
 import ButtonFilled from "../components/ButtonFilled";
 import ButtonOutline from "../components/ButtonOutline";
 import Nav from "../components/Nav";
 
 const Home = () => {
+    const navigate = useNavigate();
+
+    const handleNavigate = (path) => {
+        navigate(path);
+    };
+
     return (
         <>
             <section className="h-screen bg-dark-shadow bg-cover bg-no-repeat ">
                 <Nav bgColor="bg-gradient-to-b from-[#000] to-[#00000048]" />
                 <section className="pt-32 px-20">
                     <article className="">
-                        <h1 className="py-8 text-8xl font-poppinsSBd  ">The Matrix</h1>
+                        <h1 className="py-8 text-7xl font-poppinsSBd  ">Popcorn Cinema Central</h1>
                         <article className="w-1/2">
-                            <div className="my-4 flex gap-6 text-xs divide-x">
-                                <p>8.2 (12.554)</p>
-                                <p className="pl-6">2021</p>
-                                <p className="pl-6">1 h 24 min</p>
-                                <p className="pl-6">Sci-Fi</p>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, excepturi blanditiis temporibus rem doloremque reiciendis magnam ad, quisquam reprehenderit obcaecati doloribus ipsam repellendus alias quidem rerum, voluptates fuga ipsum laudantium.</p>
+                            <p className="mb-12 text-2xl font-poppinsXLgItalic">Your online database for movies and fun trivia</p>
+                            <p className="text-lg">Check out the hottest movies and get interesting insights into movie scenes you've never seen before.</p>
+                            <p className="mt-2">Learn all about cameos, goofs and other fun, hidden scene details.</p>
+                            <p className="mt-4">Grab your popcorn and let's go...</p>
                             <div className="flex gap-6">
-                                <ButtonOutline buttonText="More info" />
-                                <ButtonFilled buttonText="&#9654; Watch now" />
+                                <ButtonOutline buttonText="Browse Top 20" onClick={() => handleNavigate("/top-twenty")} />
+                                <ButtonFilled buttonText="Pop some trivia" onClick={() => handleNavigate("/trivia")} />
                             </div>
                         </article>
                     </article>
