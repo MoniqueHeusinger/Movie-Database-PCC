@@ -24,8 +24,9 @@ const Nav = ({ bgColor }) => {
                             <li><NavLink to="/" className="pb-2 hover:border-b-2">Home</NavLink></li>
                             {/* <li><NavLink to="/new-movies" className="pb-2 hover:border-b-2">New Movies</NavLink></li> */}
                             <li><NavLink to="/top-twenty" className="pb-2 hover:border-b-2">Top 20</NavLink></li>
-                            <li><NavLink to="/genres" className="mr-2 pb-2 hover:border-b-2">Genres</NavLink></li>
-                            <li><NavLink to="/coming-soon" className="mr-2 pb-2 hover:border-b-2">Coming soon</NavLink></li>
+                            <li><NavLink to="/trivia" className="pb-2 hover:border-b-2">Trivia</NavLink></li>
+                            {/* <li><NavLink to="/genres" className="mr-2 pb-2 hover:border-b-2">Genres</NavLink></li> */}
+                            {/* <li><NavLink to="/coming-soon" className="mr-2 pb-2 hover:border-b-2">Coming soon</NavLink></li> */}
                             <li className="pl-8 border-l-2"><Link className=""><img src={magnifyingGlass} alt="Search" className="ml-2 size-5 " /></Link></li>
                         </ul>
                     </nav>
