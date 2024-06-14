@@ -35,8 +35,8 @@ const TopTwentyMoviesList = () => {
 
     return (
         <>
-            <Nav />
-            <section className="px-20 py-10">
+            <Nav bgColor="bg-[#242424]" />
+            <section className="mt-32 px-20 py-10">
                 <h1 className="text-6xl font-poppinsSBd leading-loose">Popping right now</h1>
                 <h2 className="text-2xl">Top 20 Movies</h2>
                 <section className="mx-auto mt-10 grid grid-cols-1 max-w-lg grid-cols-4 items-center gap-x-8 gap-y-16 sm:max-w-xl sm:grid-cols-2 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4 xl:grid-cols-5 text-center text-md">
@@ -69,7 +69,7 @@ const TopTwentyMoviesList = () => {
                                             <p className="self-center leading-none">{movieItem.node.ratingsSummary.aggregateRating}</p>
                                         </div>
                                     }
-                                    <p className="leading-none self-center">{movieItem.node.releaseYear.year}</p>
+                                    <p className="leading-none self-center">{movieItem.node.releaseDate.year}</p>
                                 </div>
                             </div>
                         </article>

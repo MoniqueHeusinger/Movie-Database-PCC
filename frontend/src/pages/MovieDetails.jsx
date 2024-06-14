@@ -32,15 +32,6 @@ const MovieDetails = () => {
         )
     }
 
-    {/* Error screen */ }
-    // <section className="mt-20 flex flex-col justify-center">
-    //                 <p className="self-center leading-loose text-4xl font-poppinsLg">Sorry, that corn didn't pop! 😢</p>
-    //                 <p className="mt-4 self-center leading-loose text-2xl font-poppinsLg">Please go back and try again.</p>
-    //             </section>
-    //             <section className="text-center">
-    //                 <ButtonFilled buttonText="pop back" onClick={() => navigate(-1)} />
-    //             </section>
-
     const moviePoster = movie.node.primaryImage.url;
 
     return (
