@@ -40,7 +40,7 @@ const MovieDetails = () => {
     console.log({ movie });
 
     const openMovieTrailer = () => {
-        const API_KEY_MOVIEDB = import.meta.env.VITE_API_KEY_GENRES;
+        const API_KEY_MOVIEDB = import.meta.env.VITE_API_KEY_MOVIEDB;
         const movieId = movie.node.id;
         console.log({ movieId });
 

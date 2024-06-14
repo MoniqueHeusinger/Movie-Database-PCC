@@ -5,14 +5,14 @@ import classNames from "classnames";
 import testMoviePic from "../assets/img/movie-bg-test.jpg"
 
 const Trivia = () => {
-    const API_KEY_GENRES = import.meta.env.VITE_API_KEY_GENRES;
+    const API_KEY_MOVIEDB = import.meta.env.VITE_API_KEY_MOVIEDB;
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
         fetch('https://imdb8.p.rapidapi.com/title/v2/get-popular?first=20&country=US&language=en-US', {
             method: 'GET',
             headers: {
-                'x-rapidapi-key': API_KEY_GENRES,
+                'x-rapidapi-key': API_KEY_MOVIEDB,
                 'x-rapidapi-host': 'imdb8.p.rapidapi.com'
             }
         })

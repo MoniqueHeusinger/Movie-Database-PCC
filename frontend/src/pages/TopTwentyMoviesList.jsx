@@ -5,7 +5,7 @@ import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
 
 const TopTwentyMoviesList = () => {
-    const API_KEY_GENRES = import.meta.env.VITE_API_KEY_GENRES;
+    const API_KEY_MOVIEDB = import.meta.env.VITE_API_KEY_MOVIEDB;
     const [movies, setMovies] = useState([]);
     const navigate = useNavigate();
 
@@ -13,7 +13,7 @@ const TopTwentyMoviesList = () => {
         fetch('https://imdb8.p.rapidapi.com/title/v2/get-popular?first=20&country=US&language=en-US', {
             method: 'GET',
             headers: {
-                'x-rapidapi-key': API_KEY_GENRES,
+                'x-rapidapi-key': API_KEY_MOVIEDB,
                 'x-rapidapi-host': 'imdb8.p.rapidapi.com'
             }
         })
