@@ -5,9 +5,9 @@ import Nav from "../components/Nav";
 const Home = () => {
     return (
         <>
-            <section className="h-screen bg-test-shadow bg-cover bg-no-repeat ">
-                <Nav />
-                <section className="px-20">
+            <section className="h-screen bg-dark-shadow bg-cover bg-no-repeat ">
+                <Nav bgColor="bg-gradient-to-b from-[#000] to-[#00000048]" />
+                <section className="pt-32 px-20">
                     <article className="">
                         <h1 className="py-8 text-8xl font-poppinsSBd  ">The Matrix</h1>
                         <article className="w-1/2">
@@ -25,7 +25,7 @@ const Home = () => {
                         </article>
                     </article>
                 </section>
-            </section>
+            </section >
 
 
 
