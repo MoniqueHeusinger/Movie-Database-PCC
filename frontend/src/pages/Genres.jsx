@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import Nav from "../components/Nav";
 
 const Genres = () => {
-    const API_KEY_GENRES = import.meta.env.VITE_API_KEY_GENRES;
+    const API_KEY_MOVIEDB = import.meta.env.VITE_API_KEY_MOVIEDB;
     const [genres, setGenres] = useState([]);
 
     useEffect(() => {
         fetch('https://imdb8.p.rapidapi.com/title/list-popular-genres', {
             method: 'GET',
             headers: {
-                'x-rapidapi-key': API_KEY_GENRES,
+                'x-rapidapi-key': API_KEY_MOVIEDB,
                 'x-rapidapi-host': 'imdb8.p.rapidapi.com'
             }
         })
