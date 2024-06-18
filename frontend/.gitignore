@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 
 .env
+
+
+# pages with IMDB-API and limited call quota
+HomeIMDB.jsx
+MovieDetailsIMDB.jsx
+TopTwentyMoviesListIMDB.jsx

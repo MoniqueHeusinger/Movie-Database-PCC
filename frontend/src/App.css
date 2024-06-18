@@ -54,6 +54,7 @@
 
     :root {
         --primary: #242424;
+        --primary-dark: #1c1c1c;
         --secondary: white;
         --highlight: #FD0054;
         --highlight-dark: #690929;
