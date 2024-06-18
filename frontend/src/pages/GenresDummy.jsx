@@ -4,6 +4,7 @@ import moviePosterExample from "../assets/img/movie-bg-test.jpg";
 import ButtonFilled from "../components/ButtonFilled";
 import ButtonOutline from "../components/ButtonOutline";
 import classNames from "classnames";
+import { useNavigate } from "react-router-dom";
 
 const Genres = () => {
     // const API_KEY_MOVIEDB = import.meta.env.VITE_API_KEY_MOVIEDB;
@@ -12,20 +13,21 @@ const Genres = () => {
     const [selectedGenreByDropdown, setSelectedGenreByDropdown] = useState("");
     const [selectedGenreByTopFive, setSelectedGenreByTopFive] = useState("");
     const [filteredMovies, setFilteredMovies] = useState([]);
+    const navigate = useNavigate();
 
 
     const genres = ["Action", "Adventure", "Thriller", "Sci-Fi", "Comedy", "Drama", "Biography", "Documentary", "Horror", "Western", "Romance", "Film Noir", "Family", "Fantasy", "Animation", "Crime", "History", "Music", "Musical", "Mystery", "Sport", "War"];
     const genresTopFive = ["Action", "Adventure", "Comedy", "Sci-Fi", "Thriller"];
     const testMovies = [
-        { "title": "Madmax", "genre": ["Action", "Sci-Fi"] },
-        { "title": "Matrix", "genre": ["Action", "Sci-Fi"] },
-        { "title": "John Wick", "genre": ["Action"] },
-        { "title": "A Very Long Movie Title", "genre": ["Drama", "Biography", "Documentary", "Horror", "Western", "Romance", "Film Noir",] },
-        { "title": "Banana Joe And Friends", "genre": ["Western", "Comedy", "Family", "Fantasy", "Animation", "History"] },
-        { "title": "Hudson Hawk", "genre": ["Comedy"] },
-        { "title": "Street Kings", "genre": ["Action", "Thriller"] },
-        { "title": "10 Dinge, Die Ich An Dir Hasse", "genre": ["Comedy", "Romance"] },
-        { "title": "A rediciolous long unnecessary strange movie title to be set here", "genre": ["Comedy", "Drama", "Adventure", "Music", "Musical", "Mystery", "Sport", "War", "Crime"] }]
+        { "id": "tt1", "title": "Madmax", "genre": ["Action", "Sci-Fi"], "trailerId": "vi961986073" },
+        { "id": "tt2", "title": "Matrix", "genre": ["Action", "Sci-Fi"], "trailerId": "vi3740270873" },
+        { "id": "tt3", "title": "John Wick", "genre": ["Action"], "trailerId": "vi2273816345" },
+        { "id": "tt4", "title": "A Very Long Movie Title", "genre": ["Drama", "Biography", "Documentary", "Horror", "Western", "Romance", "Film Noir",], "trailerId": "vi961986073" },
+        { "id": "tt5", "title": "Banana Joe And Friends", "genre": ["Western", "Comedy", "Family", "Fantasy", "Animation", "History"], "trailerId": "vi2273816345" },
+        { "id": "tt6", "title": "Hudson Hawk", "genre": ["Comedy"], "trailerId": "vi2224029977" },
+        { "id": "tt7", "title": "Street Kings", "genre": ["Action", "Thriller"], "trailerId": "vi1790050585" },
+        { "id": "tt8", "title": "10 Dinge, Die Ich An Dir Hasse", "genre": ["Comedy", "Romance"], "trailerId": "vi3917792793" },
+        { "id": "tt9", "title": "A rediciolous long unnecessary strange movie title to be set here", "genre": ["Comedy", "Drama", "Adventure", "Music", "Musical", "Mystery", "Sport", "War", "Crime"], "trailerId": "vi961986073" }]
 
     // useEffect(() => {
     //     fetch('https://imdb8.p.rapidapi.com/title/list-popular-genres', {
@@ -125,8 +127,8 @@ const Genres = () => {
                                         "text-sm": movieItem.title.length >= 35
                                     })}>{movieItem.title}</h2>
                                     <div className="flex flex-nowrap gap-4">
-                                        <ButtonOutline buttonText="More" />
-                                        <ButtonFilled buttonText="&#9655; Trailer" />
+                                        <ButtonOutline buttonText="More" onClick={() => navigate(`/movie/${movieItem.id}`)} />
+                                        <ButtonFilled buttonText="&#9655; Trailer" onClick={() => window.open(`https://www.imdb.com/video/${movieItem.trailerId}`, "_blank")} />
                                     </div>
                                 </div>
                             </div>
