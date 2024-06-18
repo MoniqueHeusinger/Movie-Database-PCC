@@ -1,10 +1,8 @@
 import './App.css'
 import Home from './pages/Home'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NewMovies from './pages/NewMovies';
 import TopTwentyMoviesList from './pages/TopTwentyMoviesList';
-import Genres from './pages/Genres';
-import ComingSoon from './pages/ComingSoon';
+import GenresDummy from './pages/GenresDummy';
 import MovieDetails from './pages/MovieDetails';
 import Trivia from './pages/Trivia';
 
@@ -15,11 +13,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/new-movies" element={<NewMovies />} />
           <Route path="/top-twenty" element={<TopTwentyMoviesList />} />
           <Route path="/trivia" element={<Trivia />} />
-          <Route path="/genres" element={<Genres />} />
-          <Route path="/coming-soon" element={<ComingSoon />} />
+          <Route path="/genres" element={<GenresDummy />} />
+          {/* <Route path="/genres" element={<Genres />} /> */}
           <Route path="/movie/:id" element={<MovieDetails />} />
         </Routes>
       </BrowserRouter>

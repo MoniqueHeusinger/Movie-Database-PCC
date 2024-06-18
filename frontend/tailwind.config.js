@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import daisyui from 'daisyui';
+
 export default {
   content: [
     "./index.html",
@@ -7,7 +9,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'dark-shadow': "linear-gradient(to right, rgba(0, 0, 0), rgba(20, 20, 20, 0.7), transparent), linear-gradient(to bottom, rgba(0, 0, 0), rgba(0, 0, 0, 0.3), transparent), url('./src/assets/img/movie-bg-test.jpg')",
+        'home-bg-default': "linear-gradient(to right, rgba(0, 0, 0), rgba(20, 20, 20, 0.7), transparent), linear-gradient(to bottom, rgba(0, 0, 0), rgba(0, 0, 0, 0.3), transparent), url('./src/assets/img/cinema-bg.jpg')",
+        'genre-bg-default': "linear-gradient(to right, rgba(0, 0, 0), rgba(20, 20, 20, 0.7), transparent), linear-gradient(to bottom, rgba(0, 0, 0), rgba(0, 0, 0, 0.3), transparent), linear-gradient(to top, rgba(0, 0, 0), rgba(0, 0, 0, 0.3), transparent),url('./src/assets/img/movie-bg-test.jpg')",
       },
       fontFamily: {
         poppinsRg: "Poppins-Rg",
@@ -22,6 +25,10 @@ export default {
       display: ["group-hover"]
     },
   },
-  plugins: [],
+  plugins: [
+    daisyui,
+  ],
+  daisyui: {
+    themes: [],
+  }
 }
-

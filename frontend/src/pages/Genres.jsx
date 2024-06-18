@@ -24,8 +24,8 @@ const Genres = () => {
     return (
         <>
             <Nav />
-            <section className="px-20 py-10">
-                <h1 className="text-4xl font-poppinsSBd">Top 20 Movies by genre</h1>
+            <section className="mt-32 px-20 py-10">
+                <h1 className="text-4xl font-poppinsSBd">Movies by genre</h1>
                 <article className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5 text-center text-md">
                     {genres && genres.map((genreItem, index) => (
                         <a key={index} className="border-2 border-rose-50 p-4 rounded-xl col-span-2 lg:col-span-1 w-full hover:cursor-pointer active:bg-rose-700 hover:border-rose-700">{genreItem.description}</a>
