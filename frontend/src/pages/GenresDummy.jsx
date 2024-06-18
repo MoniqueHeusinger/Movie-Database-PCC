@@ -83,7 +83,7 @@ const Genres = () => {
         <>
 
             <section className="min-h-screen bg-genre-bg-default bg-cover bg-no-repeat">
-                <Nav bgColor="bg-gradient-to-b from-[#000] to-[#00000048]" />
+                <Nav bgColorFixed="bg-[#000]" bgColorGradient="bg-gradient-to-b from-[#000] to-[#00000048]" />
                 <section className="pt-32 px-20">
                     <h1 className="text-6xl font-poppinsSBd">Movies by genre</h1>
                     {/* Top 5 genres */}

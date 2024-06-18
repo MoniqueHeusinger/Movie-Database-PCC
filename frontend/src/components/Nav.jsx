@@ -2,14 +2,32 @@ import popcornIcon from "../assets/img/icons/popcorn-icon-rose-700.png";
 import magnifyingGlass from "../assets/img/icons/lupe-icon.png";
 import { NavLink, Link } from "react-router-dom";
 import classNames from "classnames";
+import { useEffect, useState } from "react";
 
-const Nav = ({ bgColor }) => {
+const Nav = ({ bgColorGradient, bgColorFixed }) => {
+    const [isWindowScrolled, setIsWindowScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleWindowScroll = () => {
+            const isScrolled = window.scrollY > 60;
+            if (isScrolled !== isWindowScrolled) {
+                setIsWindowScrolled(isScrolled);
+            }
+        };
+
+        window.addEventListener("scroll", handleWindowScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleWindowScroll)
+        }
+    }, [isWindowScrolled])
+
     return (
         <>
             {/* box-shadow und bg-color dynamisch übergeben */}
             <section className="relative">
                 {/* <article className="px-20 py-8 flex justify-between items-center fixed top-0 left-0 right-0 shadow-xl z-50"> */}
-                <article className={classNames("px-20 py-8 flex justify-between items-center fixed top-0 left-0 right-0 shadow-xl z-50", bgColor)}>
+                <article className={classNames("px-20 py-8 flex justify-between items-center fixed top-0 left-0 right-0 shadow-xl z-50", { [bgColorGradient]: !isWindowScrolled, [bgColorFixed]: isWindowScrolled })}>
                     <article className="flex">
                         <Link to="/"><img src={popcornIcon} alt="" className="size-12" /></Link>
                         <div>

@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <>
             <section className="h-screen bg-home-bg-default bg-cover bg-no-repeat ">
-                <Nav bgColor="bg-gradient-to-b from-[#000] to-[#00000048]" />
+                <Nav bgColorGradient="bg-gradient-to-b from-[#000] to-[#00000048]" />
                 <section className="pt-32 px-20">
                     <article className="">
                         <h1 className="py-8 text-7xl font-poppinsSBd  ">Popcorn Cinema Central</h1>
