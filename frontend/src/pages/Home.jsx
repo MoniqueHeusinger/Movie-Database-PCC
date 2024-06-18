@@ -21,7 +21,7 @@ const Home = () => {
                             <p className="mb-12 text-2xl font-poppinsXLgItalic">Your poppin' online movie database</p>
                             <p className="text-lg">Check out (most of 😉) the greatest movies ever and get interesting insights on ratings and awards or watch the official trailers.</p>
                             <p className="mt-4">Grab your popcorn and let's go...</p>
-                            <div className="flex gap-6">
+                            <div className="my-6 flex gap-6">
                                 <ButtonOutline buttonText="Browse Top 20" onClick={() => handleNavigate("/top-twenty")} />
                                 <ButtonFilled buttonText="Select by genre" onClick={() => handleNavigate("/genres")} />
                             </div>
