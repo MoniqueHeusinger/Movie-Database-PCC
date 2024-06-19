@@ -4,6 +4,10 @@
 This is an online movie database with data from an IMDB-API including lots of fun facts about movies - well that's the plan ;)
 
 The reason why I started this project was, because I wanted to dive deeper into Tailwind and getting more experience working with it.
+
+Check out the latest version:
+[popcorn-cinema-central.onrender.com)](https://popcorn-cinema-central.onrender.com/)
+
 ## Screenshots
 
 <img src="./frontend/public/screenshot_movie_db.png" width="500">
@@ -57,6 +61,6 @@ Then get your free API-KEY on rapid.com (https://rapidapi.com/apidojo/api/imdb8)
 
 ## Deployment
 
-...is very soon to be found here ;)
+[popcorn-cinema-central.onrender.com)](https://popcorn-cinema-central.onrender.com/)
 
 
