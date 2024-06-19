@@ -38,7 +38,7 @@ const Nav = ({ bgColorGradient, bgColorFixed }) => {
                     <nav>
                         <ul className="flex gap-10">
                             <li><NavLink to="/" className="pb-2 hover:border-b-2">Home</NavLink></li>
-                            <li><NavLink to="/top-twenty" className="pb-2 hover:border-b-2">Popular</NavLink></li>
+                            <li><NavLink to="/popular-movies" className="pb-2 hover:border-b-2">Popular</NavLink></li>
                             {/* <li><NavLink to="/trivia" className="pb-2 hover:border-b-2">Trivia</NavLink></li> */}
                             <li><NavLink to="/genres" className="mr-2 pb-2 hover:border-b-2">Genres</NavLink></li>
                             <li className="pl-8 border-l-2"><Link className=""><img src={magnifyingGlass} alt="Search" className="ml-2 size-5 " /></Link></li>

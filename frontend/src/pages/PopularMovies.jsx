@@ -4,7 +4,7 @@ import starIcon from "../assets/img/icons/stern-icon.png";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
 
-const TopTwentyMoviesListDummy = () => {
+const PopularMovies = () => {
     const API_KEY_MOVIEDB = import.meta.env.VITE_API_KEY_MOVIEDB;
     const [movies, setMovies] = useState([]);
     const navigate = useNavigate();
@@ -23,6 +23,7 @@ const TopTwentyMoviesListDummy = () => {
 
     const countTwenty = 1;
 
+    //--------------- OLD FOR API-DATA ---------------------
     // useEffect(() => {
     //     fetch('https://imdb8.p.rapidapi.com/title/v2/get-popular?first=20&country=US&language=en-US', {
     //         method: 'GET',
@@ -69,34 +70,7 @@ const TopTwentyMoviesListDummy = () => {
                                     </div>
                                 </>
                             ))}
-                            {/* <div className="carousel-item">
-                                <p className="font-freeman text-[190px] leading-none">1</p>
-                                <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg" alt="Burger" />
-                            </div>
-                            <div className="carousel-item">
-                                <p className="font-freeman text-[190px] leading-none">2</p>
-                                <img src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg" alt="Burger" />
-                            </div>
-                            <div className="carousel-item">
-                                <p className="font-freeman text-[190px] leading-none">3</p>
-                                <img src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg" alt="Burger" />
-                            </div>
-                            <div className="carousel-item">
-                                <p className="font-freeman text-[190px] leading-none">4</p>
-                                <img src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg" alt="Burger" />
-                            </div>
-                            <div className="carousel-item">
-                                <p className="font-freeman text-[190px] leading-none">5</p>
-                                <img src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg" alt="Burger" />
-                            </div>
-                            <div className="carousel-item">
-                                <p className="font-freeman text-[190px] leading-none">6</p>
-                                <img src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg" alt="Burger" />
-                            </div>
-                            <div className="carousel-item">
-                                <p className="font-freeman text-[190px] leading-none">7</p>
-                                <img src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg" alt="Burger" />
-                            </div> */}
+
                         </article>
 
                         {/* ---------- OLD FOR API DATA ------------- */}
@@ -142,4 +116,4 @@ const TopTwentyMoviesListDummy = () => {
     );
 }
 
-export default TopTwentyMoviesListDummy;
+export default PopularMovies;
