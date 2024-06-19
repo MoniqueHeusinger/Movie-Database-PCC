@@ -46,6 +46,11 @@
         src: url("./assets/fonts/Poppins-ExtraLightItalic.ttf");
     }
 
+    @font-face {
+        font-family: "Freeman";
+        src: url("./assets/fonts/Freeman-Regular.ttf");
+    }
+
     * {
         margin: 0;
         padding: 0;
@@ -62,7 +67,7 @@
     }
 
     body {
-        background-color: var(--primary);
+        background-color: #000;
         color: var(--secondary);
         font-family: "Poppins-Rg", sans-serif;
     }
@@ -70,6 +75,10 @@
     a {
         font-family: inherit;
         text-decoration: none;
+    }
+
+    .font-outline-2 {
+        -webkit-text-stroke: 3px #9b9b9b;
     }
 }
 
