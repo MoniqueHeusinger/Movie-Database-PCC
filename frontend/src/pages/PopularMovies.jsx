@@ -28,7 +28,7 @@ const PopularMovies = () => {
     const scrollRight = () => {
         const carousel = document.querySelector("#carousel");
         if (carousel) {
-            carousel.scrollBy({ left: 600, behavior: "smooth" });
+            carousel.scrollBy({ left: 800, behavior: "smooth" });
             setShowLeftButton(true);
         }
     };
@@ -37,7 +37,7 @@ const PopularMovies = () => {
     const scrollLeft = () => {
         const carousel = document.querySelector("#carousel");
         if (carousel) {
-            carousel.scrollBy({ left: -600, behavior: "smooth" });
+            carousel.scrollBy({ left: -800, behavior: "smooth" });
         }
     };
 
@@ -121,13 +121,13 @@ const PopularMovies = () => {
                         </div>
 
                         {/* Carousel */}
-                        <article className="pr-16 carousel carousel-center max-w-full rounded-box gap-x-14 overflow-x-auto" id="carousel">
+                        <article className="pl-20 pr-16 py-8 carousel carousel-center max-w-full rounded-box gap-x-14 overflow-x-auto" id="carousel">
                             {testMovies && testMovies.map((movieItem, index) => (
                                 <>
                                     <div key={index} className="carousel-item items-center" id={`slide${index + 1}`}>
                                         <p className="font-freeman text-[240px] leading-none text-neutral-800 font-outline-2 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8 mr-[-27px]">{index + 1}</p>
                                         <div>
-                                            <a className="cursor-pointer" onClick={() => navigate(`/movie/${movieItem.id}`)}><img src={movieItem.poster} alt={movieItem.title} className="w-48 rounded-xl hover:scale-105 transition-all" /></a>
+                                            <a className="cursor-pointer" onClick={() => navigate(`/movie/${movieItem.id}`)}><img src={movieItem.poster} alt={movieItem.title} className="h-[270px] rounded-xl hover:scale-105 transition-all" /></a>
                                         </div>
                                     </div>
                                 </>
