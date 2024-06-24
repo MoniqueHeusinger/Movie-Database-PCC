@@ -22,7 +22,7 @@ const Home = () => {
                             <p className="sm:text-base xl:text-lg">Check out (most of 😉) the greatest movies ever and get interesting insights on ratings and awards or watch the official trailers.</p>
                             <p className="sm:mt-2 xl:mt-4">Grab your popcorn and let's go...</p>
                             <div className="my-6 flex gap-6">
-                                <ButtonOutline buttonText="Browse Top 20" onClick={() => handleNavigate("/top-twenty")} />
+                                <ButtonOutline buttonText="Popular movies" onClick={() => handleNavigate("/popular-movies")} />
                                 <ButtonFilled buttonText="Select by genre" onClick={() => handleNavigate("/genres")} />
                             </div>
                         </article>
