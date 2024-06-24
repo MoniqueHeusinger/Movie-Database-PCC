@@ -8,6 +8,8 @@ const PopularMovies = () => {
     const API_KEY_MOVIEDB = import.meta.env.VITE_API_KEY_MOVIEDB;
     const [movies, setMovies] = useState([]);
     const navigate = useNavigate();
+    const [showLeftButton, setShowLeftButton] = useState(false);
+    const [showRightButton, setShowRightButton] = useState(true);
 
     const testMovies = [
         { "id": "tt0096895", "title": "Batman", "genre": ["Action", "Sci-Fi"], "trailerId": "vi2568602905", "poster": "https://m.media-amazon.com/images/M/MV5BNTQzN2EzMzYtNzIzMy00YTU5LTlhMmYtZmQ3ODc0MjJhYTMzXkEyXkFqcGdeQXVyMTY5NzgyMDU3._V1_FMjpg_UY726_.jpg " },
@@ -21,7 +23,56 @@ const PopularMovies = () => {
         { "id": "tt0081777", "title": "Xanadu", "genre": ["Music", "Musical", "Family", "Fantasy"], "trailerId": "vi3923902745", "poster": "https://m.media-amazon.com/images/M/MV5BYTlkNWQyMjAtZGE2Yi00YWU2LWI5N2EtOGIwYjJjOTkxNzNhXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_FMjpg_UY740_.jpg" },
         { "id": "tt0094012", "title": "Spaceballs", "genre": ["Comedy", "Adventure", "History", "War"], "trailerId": "vi2559229721", "poster": "https://m.media-amazon.com/images/M/MV5BYzhiODlkZTctMDUxOC00Mjg4LWIzNWMtZjIzMmEzNmYyOWYwXkEyXkFqcGdeQXVyNjkwOTQ4MDE@._V1_FMjpg_UY720_.jpg" }];
 
-    const countTwenty = 1;
+
+    // Event handler for scrolling right
+    const scrollRight = () => {
+        const carousel = document.querySelector("#carousel");
+        if (carousel) {
+            carousel.scrollBy({ left: 600, behavior: "smooth" });
+            setShowLeftButton(true);
+        }
+    };
+
+    // Event handler for scrolling left
+    const scrollLeft = () => {
+        const carousel = document.querySelector("#carousel");
+        if (carousel) {
+            carousel.scrollBy({ left: -600, behavior: "smooth" });
+        }
+    };
+
+    // Check the scroll position to show/hide left button
+    const checkScrollPosition = () => {
+        const carousel = document.body.querySelector("#carousel");
+        if (carousel) {
+            // Calculate max. scroll position
+            const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+
+            // Check, if left button is displayed
+            if (carousel.scrollLeft > 100) {
+                setShowLeftButton(true);
+            } else {
+                setShowLeftButton(false);
+            }
+
+            // Check, if right button is displayed
+            if (carousel.scrollLeft < maxScrollLeft - 100) {
+                setShowRightButton(true);
+            } else {
+                setShowRightButton(false)
+            }
+        }
+
+    };
+
+    // Attach the scroll event listener
+    useEffect(() => {
+        const carousel = document.querySelector("#carousel");
+        if (carousel) {
+            carousel.addEventListener("scroll", checkScrollPosition);
+            return () => carousel.removeEventListener("scroll", checkScrollPosition);
+        }
+    }, []);
 
     //--------------- OLD FOR API-DATA ---------------------
     // useEffect(() => {
@@ -46,23 +97,34 @@ const PopularMovies = () => {
     //     navigate(`/movie/${movieItem.node.id}`, { state: { movie: movieItem } });
     // };
 
-    console.log("movies.data: ", movies.data);
+    // console.log("movies.data: ", movies.data);
+
 
     return (
         <>
-            <section className="min-h-screen bg-cinema bg-cover bg-no-repeat">
+            <section className="min-h-screen bg-cinema bg-cover bg-no-repeat bg-bottom">
                 <Nav bgColorFixed="bg-[#000]" bgColor="bg-gradient-to-b from-[#000] to-[#00000048]" />
                 <section className="pt-32 px-20">
                     <h1 className="text-6xl font-poppinsSBd leading-loose">Popping right now</h1>
                     <h2 className="text-2xl">Top 10 Movies</h2>
-                    <section className="mx-auto mt-10 text-md">
-                        {/* <section className="mx-auto mt-10 grid grid-cols-1 max-w-lg grid-cols-4 items-center gap-x-8 gap-y-16 sm:max-w-xl sm:grid-cols-2 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4 xl:grid-cols-5 text-center text-md"> */}
+                    <section className="mx-auto mt-10 text-md relative overflow-hidden bg-[#000000b7] rounded-xl">
+                        {/* < Left button container */}
+                        <div className={classNames("absolute top-0 left-0 pr-16 w-fit h-full flex bg-gradient-to-r from-[#000] via-[#000] to-[transparent] items-center z-20 transition-all", { "hidden": !showLeftButton })}>
+                            <div className="w-4 h-full bg-[#000]"></div>
+                            <a className="btn btn-circle hover:bg-[#FD0054] hover:border-none transition-all" onClick={scrollLeft}>❮</a>
+                        </div>
 
+                        {/*  > Right button container */}
+                        <div className={classNames("absolute top-0 right-0 pl-16 w-fit h-full flex bg-gradient-to-l from-[#000] via-[#000] to-[transparent] items-center z-20 transition-all", { "hidden": !showRightButton })}>
+                            <a className="btn btn-circle hover:bg-[#FD0054] hover:border-none transition-all" onClick={scrollRight}>❯</a>
+                            <div className="w-4 h-full bg-[#000]"></div>
+                        </div>
 
-                        <article className="pb-16 carousel rounded-box gap-x-14">
+                        {/* Carousel */}
+                        <article className="pr-16 carousel carousel-center max-w-full rounded-box gap-x-14 overflow-x-auto" id="carousel">
                             {testMovies && testMovies.map((movieItem, index) => (
                                 <>
-                                    <div key={index} className="carousel-item items-center">
+                                    <div key={index} className="carousel-item items-center" id={`slide${index + 1}`}>
                                         <p className="font-freeman text-[240px] leading-none text-neutral-800 font-outline-2 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8 mr-[-27px]">{index + 1}</p>
                                         <div>
                                             <a className="cursor-pointer" onClick={() => navigate(`/movie/${movieItem.id}`)}><img src={movieItem.poster} alt={movieItem.title} className="w-48 rounded-xl hover:scale-105 transition-all" /></a>
@@ -70,7 +132,6 @@ const PopularMovies = () => {
                                     </div>
                                 </>
                             ))}
-
                         </article>
 
                         {/* ---------- OLD FOR API DATA ------------- */}
