@@ -46,6 +46,10 @@ const Genres = () => {
     //         .catch((error) => console.log(error))
     // }, [])
 
+    useEffect(() => {
+        handleSelectGenre("All");
+    }, [])
+
     const handleSelectGenre = (genre, isTopFive) => {
         const scrollToGenreResultsSection = () => {
             const genreResultsSection = document.body.querySelector("#genreResults");
@@ -88,7 +92,7 @@ const Genres = () => {
         if (!dropdownMenuElement.contains(e.target)) {
             dropdownMenuElement.open = false;
         }
-    })
+    });
 
     return (
         <>
