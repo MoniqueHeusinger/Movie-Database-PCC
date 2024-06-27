@@ -15,6 +15,7 @@ The reason why I started this project was, because I wanted to dive deeper into 
 <img src="./frontend/public/screenshot_movie_db2.png" width="500">
 <img src="./frontend/public/screenshot_mdb_popular.png" width="500">
 <img src="./frontend/public/screenshot_mdb_genres.png" width="500">
+<img src="./frontend/public/screenshot_mdb_details.png" width="500">
 
 
 ## Tech Stack
