@@ -15,7 +15,7 @@ const testMovies = [
             },
             {
                 "name": "Kim Basinger",
-                "photo": "https://m.media-amazon.com/images/M/MV5BMTQyMDkxNjcxNV5BMl5BanBnXkFtZTcwODMyNzgyOA@@._V1_UY44_CR1,0,32,44_AL_.jpg"
+                "photo": "https://m.media-amazon.com/images/M/MV5BMTQyMDkxNjcxNV5BMl5BanBnXkFtZTcwODMyNzgyOA@@._V1_QL75_UY207_CR13,0,140,207_.jpg"
             }],
         "plot": "After witnessing the death of his beloved parents in front of his face, billionaire Bruce Wayne vows himself to protecting the good people of Gotham City against evil forces that threaten the city. But his vow is put to the test when he starts to wage his crime fighting crusade against the maniacal Clown Prince of Crime...also known as the Joker.",
         "plotAuthor": { "name": "Blazer346", "link": "https://www.imdb.com/search/title/?plot_author=blazer346&sort=alpha,asc" },

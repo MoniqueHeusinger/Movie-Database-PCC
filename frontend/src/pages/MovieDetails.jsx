@@ -168,7 +168,7 @@ const MovieDetails = () => {
 
                 <Nav bgColorFixed="bg-[#000]" bgColorGradient="bg-gradient-to-b from-[#000] to-[#00000048]" />
 
-                <section className="pt-32 px-20 grid sm:grid-cols-1 lg:grid-cols-[minmax(900px,_1fr)_350px] gap-x-8">
+                <section className="pt-32 px-20 grid sm:grid-cols-1 lg:grid-cols-[minmax(600px,_1fr)_350px] gap-x-8">
                     {/* Movie data */}
                     <article className="">
                         <h1 className="text-6xl font-poppinsSBd">{movie.title}</h1>
@@ -180,18 +180,19 @@ const MovieDetails = () => {
                             <p>{movie.release.year}</p>
                         </div>
 
-                        <p className="mt-14 mb-8">{movie.plot}</p>
+                        <p className="mt-14 mb-4">{movie.plot}</p>
+                        <p className="mb-14 text-sm font-poppinsThItalic">- plot summary by: <a href={movie.plotAuthor.link}>{movie.plotAuthor.name}</a></p>
 
                         <ButtonFilled buttonText="&#9655; Trailer" onClick={() => window.open(`https://www.imdb.com/video/${movie.trailerId}`, "_blank")} />
 
                         {/* Movie cast */}
-                        <div className="my-12 px-8 py-2 bg-[#242424] w-1/2 flex flex-col divide-y divide-dashed divide-zinc-700 rounded-xl shadow-[8px_12px_21px_-2px_rgba(0,0,0,0.8)]">
+                        <div className="my-12 px-8 py-2 sm:w-2/3 xl:w-1/2 bg-[#242424] flex flex-col divide-y divide-dashed divide-zinc-700 rounded-xl shadow-[8px_12px_21px_-2px_rgba(0,0,0,0.8)]">
                             <p className="py-4 font-poppinsBd text-2xl">Cast:</p>
                             {movie && movie.mainCast.map((creditItem) => {
                                 const creditImage = creditItem.photo;
                                 return (
                                     <div className="py-3 flex gap-4 items-center font-poppinsXLgItalic" >
-                                        <div className="w-16 h-16 rounded-full" style={{ backgroundImage: `url(${creditImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}></div>
+                                        <div className="w-16 h-16 rounded-full" style={{ backgroundImage: `url(${creditImage})`, backgroundSize: 'cover', backgroundPosition: 'top', backgroundRepeat: 'no-repeat' }}></div>
                                         <p>{creditItem.name}</p>
                                     </div>
                                 )
