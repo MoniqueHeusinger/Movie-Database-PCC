@@ -5,31 +5,27 @@ import ButtonFilled from "../components/ButtonFilled";
 import ButtonOutline from "../components/ButtonOutline";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
+import { useMoviesDummy } from "../context/MoviesDummyContext";
 
 const Genres = () => {
+    {/* ---------- OLD FOR API DATA ------------- */ }
     // const API_KEY_MOVIEDB = import.meta.env.VITE_API_KEY_MOVIEDB;
     // const [genres, setGenres] = useState([]);
+    {/* ---------- OLD FOR API DATA ------------- */ }
+
     const [selectedGenre, setSelectedGenre] = useState("");
     const [selectedGenreByDropdown, setSelectedGenreByDropdown] = useState("");
     const [selectedGenreByTopFive, setSelectedGenreByTopFive] = useState("");
     const [filteredMovies, setFilteredMovies] = useState([]);
     const navigate = useNavigate();
+    const testMovies = useMoviesDummy();
 
 
-    const genres = ["All", "Action", "Adventure", "Thriller", "Sci-Fi", "Comedy", "Drama", "Biography", "Documentary", "Horror", "Western", "Romance", "Film Noir", "Family", "Fantasy", "Animation", "Crime", "History", "Music", "Musical", "Mystery", "Sport", "War"];
+    const genresList = ["All", "Action", "Adventure", "Thriller", "Sci-Fi", "Comedy", "Drama", "Biography", "Documentary", "Horror", "Western", "Romance", "Film Noir", "Family", "Fantasy", "Animation", "Crime", "History", "Music", "Musical", "Mystery", "Sport", "War"];
     const genresTopFive = ["Action", "Adventure", "Comedy", "Sci-Fi", "Thriller"];
-    const testMovies = [
-        { "id": "tt0096895", "title": "Batman", "genre": ["Action", "Sci-Fi"], "trailerId": "vi2568602905", "poster": "https://m.media-amazon.com/images/M/MV5BNTQzN2EzMzYtNzIzMy00YTU5LTlhMmYtZmQ3ODc0MjJhYTMzXkEyXkFqcGdeQXVyMTY5NzgyMDU3._V1_FMjpg_UY726_.jpg " },
-        { "id": "tt6146586", "title": "John Wick 3", "genre": ["Action"], "trailerId": "vi3978017305", "poster": "https://m.media-amazon.com/images/M/MV5BMTE4NmVmNTctMjNlZi00ODQwLTgxYmYtOGZhNzFlOTA0ODRiXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_FMjpg_UY678_.jpg " },
-        { "id": "tt2911666", "title": "John Wick", "genre": ["Action"], "trailerId": "vi2273816345", "poster": "https://m.media-amazon.com/images/M/MV5BMmU1ZTAzMWItYjA1Yi00Njk2LWEwNjUtMThiMDk2MzZiNjMwXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_FMjpg_UX410_.jpg " },
-        { "id": "tt8367814", "title": "The Gentlemen", "genre": ["Action", "Drama", "Biography", "Documentary", "Romance", "Film Noir",], "trailerId": "vi1990573593", "poster": "https://m.media-amazon.com/images/M/MV5BOTNjMzcwNmYtOTQ5Ni00ZDNjLWFmYjEtNTQ1MjE0NTUzNWIxXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_FMjpg_UY679_.jpg" },
-        { "id": "tt0101701", "title": "Des Wahnsinns Fette Beute", "genre": ["Comedy", "Family", "Fantasy"], "trailerId": "vi1093845017", "poster": "https://m.media-amazon.com/images/M/MV5BYzM3NjgxMDEtNWQyMi00MGYzLWI0YTMtOGZhMjRkYWNiYmUwXkEyXkFqcGdeQXVyNjE5MjUyOTM@._V1_FMjpg_UY873_.jpg" },
-        { "id": "tt0102070", "title": "Hudson Hawk", "genre": ["Comedy"], "trailerId": "vi2224029977", "poster": "https://m.media-amazon.com/images/M/MV5BNzhlN2Q1MTktZGU3Yi00Y2Q2LTliZmYtNWQ0NTEzOTAyMTQ2XkEyXkFqcGdeQXVyNjkwOTQ4MDE@._V1_FMjpg_UY720_.jpg" },
-        { "id": "tt0421073", "title": "Street Kings", "genre": ["Action", "Thriller"], "trailerId": "vi1790050585", "poster": "https://m.media-amazon.com/images/M/MV5BNDkyMGMwNmEtOGQ3OC00Nzk3LTgyZTctMTkyYmEwOGVmODExXkEyXkFqcGdeQXVyNjk3NDczNTM@._V1_FMjpg_UY640_.jpg" },
-        { "id": "tt0147800", "title": "10 Dinge, Die Ich An Dir Hasse", "genre": ["Comedy", "Romance"], "trailerId": "vi3917792793", "poster": "https://m.media-amazon.com/images/M/MV5BOTY5NGEwZDgtZDVhZC00NjVhLTk1YjktODQ3NDBiZTU1MDIzXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_FMjpg_UY720_.jpg" },
-        { "id": "tt0081777", "title": "Xanadu", "genre": ["Music", "Musical", "Family", "Fantasy"], "trailerId": "vi3923902745", "poster": "https://m.media-amazon.com/images/M/MV5BYTlkNWQyMjAtZGE2Yi00YWU2LWI5N2EtOGIwYjJjOTkxNzNhXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_FMjpg_UY740_.jpg" },
-        { "id": "tt0094012", "title": "Spaceballs", "genre": ["Comedy", "Adventure", "History", "War"], "trailerId": "vi2559229721", "poster": "https://m.media-amazon.com/images/M/MV5BYzhiODlkZTctMDUxOC00Mjg4LWIzNWMtZjIzMmEzNmYyOWYwXkEyXkFqcGdeQXVyNjkwOTQ4MDE@._V1_FMjpg_UY720_.jpg" }];
 
+
+    {/* ---------- OLD FOR API DATA ------------- */ }
     // useEffect(() => {
     //     fetch('https://imdb8.p.rapidapi.com/title/list-popular-genres', {
     //         method: 'GET',
@@ -45,6 +41,7 @@ const Genres = () => {
     //         })
     //         .catch((error) => console.log(error))
     // }, [])
+    {/* ---------- OLD FOR API DATA ------------- */ }
 
     useEffect(() => {
         handleSelectGenre("All");
@@ -116,7 +113,7 @@ const Genres = () => {
                         <details className="w-full" id="genreDropdownMenu">
                             <summary className="w-full text-xl font-poppinsSBd hover:cursor-pointer">{selectedGenreByDropdown ? <>Selected genre: <span className="font-poppinsXLgItalic">{selectedGenreByDropdown}</span></> : "Select genre"}</summary>
                             <ul className="my-4 w-full rounded-xl dropdown-content menu z-[1] grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-2 bg-neutral-900">
-                                {genres.map((genreItem, index) => (
+                                {genresList.map((genreItem, index) => (
                                     <li key={index}><a href="" className="font-poppinsLg text-lg hover:bg-rose-700 focus:outline-none focus:bg-rose-700" onClick={(e) => { e.preventDefault(); handleSelectGenre(genreItem, false) }}>{genreItem}</a></li>
                                 ))}
                             </ul>
