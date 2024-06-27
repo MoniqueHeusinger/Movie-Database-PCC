@@ -2,15 +2,19 @@
 # Popcorn Cinema Central 
 
 This is an online movie database with data from an IMDB-API including lots of fun facts about movies - well that's the plan ;)
-
-The reason why I started this project was, because I wanted to dive deeper into Tailwind and getting more experience working with it.
+Since the API's free data requests are limited, I also inserted some dummy data.
 
 Check out the latest version:
 [popcorn-cinema-central.onrender.com](https://popcorn-cinema-central.onrender.com/)
 
+The reason why I started this project was, because I wanted to dive deeper into Tailwind and getting more experience working with it.
+
+
 ## Screenshots
 
 <img src="./frontend/public/screenshot_movie_db.png" width="500">
+<img src="./frontend/public/screenshot_mdb_popular.png" width="500">
+<img src="./frontend/public/screenshot_mdb_genres.png" width="500">
 
 
 ## Tech Stack
