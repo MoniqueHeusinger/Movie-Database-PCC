@@ -20,7 +20,7 @@ const testMovies = [
         "plot": "After witnessing the death of his beloved parents in front of his face, billionaire Bruce Wayne vows himself to protecting the good people of Gotham City against evil forces that threaten the city. But his vow is put to the test when he starts to wage his crime fighting crusade against the maniacal Clown Prince of Crime...also known as the Joker.",
         "plotAuthor": { "name": "Blazer346", "link": "https://www.imdb.com/search/title/?plot_author=blazer346&sort=alpha,asc" },
         "trailerId": "vi2568602905",
-        "poster": "https://m.media-amazon.com/images/M/MV5BNTQzN2EzMzYtNzIzMy00YTU5LTlhMmYtZmQ3ODc0MjJhYTMzXkEyXkFqcGdeQXVyMTY5NzgyMDU3._V1_FMjpg_UY726_.jpg "
+        "poster": "https://m.media-amazon.com/images/M/MV5BZmY1ZmQ3ZDAtNDU3Zi00NjI4LWFmMTEtZjU5MDk4N2ZmYzAwXkEyXkFqcGdeQXVyMTQwODQwMzAy._V1_.jpg"
     },
     {
         "id": "tt6146586",
