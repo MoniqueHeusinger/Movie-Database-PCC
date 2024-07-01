@@ -5,6 +5,7 @@ import loadingGif from "../assets/img/icons/popcorn-animated.gif";
 import starIcon from "../assets/img/icons/stern-icon.png";
 import classNames from "classnames";
 import ButtonFilled from "../components/ButtonFilled";
+import ButtonOutline from "../components/ButtonOutline";
 import { useMoviesDummy } from "../context/MoviesDummyContext"
 
 const MovieDetails = () => {
@@ -182,42 +183,37 @@ const MovieDetails = () => {
 
                 <Nav bgColorFixed="bg-[#000]" bgColorGradient="bg-gradient-to-b from-[#000] to-[#00000048]" />
 
-                <section className="pt-32 px-20 grid grid-cols-1 md:grid-cols-[minmax(300px,_1fr)_200px] lg:grid-cols-[minmax(500px,_1fr)_350px] 2xl:grid-cols-[minmax(700px,_1fr)_500px] gap-x-8 lg:gap-x-20">
-                    {/*  */}
-
-                    {/* Movie title + data */}
-                    <article className="md:col-span-2 lg:col-span-1">
+                <section className="pt-32 px-20 grid sm:grid-cols-[minmax(300px,_1fr)_200px] lg:grid-cols-[minmax(600px,_1fr)_350px] gap-x-8">
+                    {/* Movie data */}
+                    <article className="">
                         <h1 className="text-6xl font-poppinsSBd">{movie.title}</h1>
-                        <div className="mt-6 w-full md:w-2/3 flex justify-between font-poppinsXLg">
+                        <div className="mt-6 w-2/3 flex justify-between font-poppinsXLg">
                             <p>{movie.genre.join(" / ")}</p>
                             <p>&#x2022;</p>
                             <p>{movie.director}</p>
                             <p>&#x2022;</p>
                             <p>{movie.release.year}</p>
                         </div>
-                    </article>
 
-                    {/* Movie plot */}
-                    <article className="md:col-start-1 md:col-end-2">
-                        <p className="mt-14 mb-4 text-lg">{movie.plot}</p>
-                        <p className="mb-10 text-sm font-poppinsThItalic">- plot summary by: <a href={movie.plotAuthor.link}>{movie.plotAuthor.name}</a></p>
-                        {/* Button mit Trailer */}
+                        <p className="mt-14 mb-4">{movie.plot}</p>
+                        <p className="mb-14 text-sm font-poppinsThItalic">- plot summary by: <a href={movie.plotAuthor.link}>{movie.plotAuthor.name}</a></p>
+
                         <ButtonFilled buttonText="&#9655; Trailer" onClick={() => window.open(`https://www.imdb.com/video/${movie.trailerId}`, "_blank")} />
 
                     </article>
 
                     {/* Movie poster */}
-                    <article className="mt-10 lg:mt-0 row-start-2 row-end-3 md:col-start-2 md:col-end-3 lg:row-start-1 lg:row-end-4 content-center lg:content-start">
-                        <img src={movie.poster} alt="" className="max-h-[300px] md:max-h-[450px] xl:max-h-[700px] rounded-xl sm:shadow-light lg:shadow-strong" />
+                    <article className="justify-self-center content-center">
+                        <img src={movie.poster} alt="" className="md:max-h-[450px] rounded-xl sm:shadow-light lg:shadow-strong" />
                     </article>
 
                     {/* Movie cast */}
-                    <article className="my-12 px-8 py-2 w-full xl:w-2/3 bg-[#242424] flex flex-col divide-y divide-dashed divide-zinc-700 rounded-xl shadow-[8px_12px_21px_-2px_rgba(0,0,0,0.8)]">
+                    <article className="my-12 px-8 py-2 sm:col-span-2 sm:w-full md:w-2/3 xl:w-1/2 bg-[#242424] flex flex-col divide-y divide-dashed divide-zinc-700 rounded-xl shadow-[8px_12px_21px_-2px_rgba(0,0,0,0.8)]">
                         <p className="py-4 font-poppinsBd text-2xl">Cast:</p>
                         {movie && movie.mainCast.map((creditItem) => {
                             const creditImage = creditItem.photo;
                             return (
-                                <div className="py-3 flex gap-4 items-center font-poppinsXLgItalic text-lg" >
+                                <div className="py-3 flex gap-4 items-center font-poppinsXLgItalic" >
                                     <div className="w-16 h-16 rounded-full" style={{ backgroundImage: `url(${creditImage})`, backgroundSize: 'cover', backgroundPosition: 'top', backgroundRepeat: 'no-repeat' }}></div>
                                     <p>{creditItem.name}</p>
                                 </div>
@@ -225,6 +221,9 @@ const MovieDetails = () => {
                         })
                         }
                     </article>
+
+
+                    {/* Button mit Trailer */}
                 </section>
             </section>
         </>

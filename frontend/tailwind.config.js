@@ -24,7 +24,11 @@ export default {
         poppinsSBd: "Poppins-SBd",
         freeman: "Freeman"
       },
-      display: ["group-hover"]
+      display: ["group-hover"],
+      boxShadow: {
+        "strong": "1px 2px 36px -5px rgba(255,255,255,0.81)",
+        "light": "3px 3px 19px -3px rgba(255,255,255,0.4)"
+      }
     },
   },
   plugins: [
