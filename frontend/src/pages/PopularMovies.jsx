@@ -11,14 +11,26 @@ const PopularMovies = () => {
     const navigate = useNavigate();
     const [showLeftButton, setShowLeftButton] = useState(false);
     const [showRightButton, setShowRightButton] = useState(true);
+    const [firstScrollLeft, setFirstScrollLeft] = useState(true);
+    const [firstScrollRight, setFirstScrollRight] = useState(true);
     const testMovies = useMoviesDummy();
+
+    const SCROLL_AMOUNT_LARGE = 800;
+    const SCROLL_AMOUNT_SMALL = 400;
+
+    // Function to determine scroll amount based on screen width
+    const getScrollAmountByScreenSize = () => {
+        return window.innerWidth < 1024 ? SCROLL_AMOUNT_SMALL : SCROLL_AMOUNT_LARGE;
+    };
 
     // Event handler for scrolling right
     const scrollRight = () => {
         const carousel = document.querySelector("#carousel");
         if (carousel) {
-            carousel.scrollBy({ left: 800, behavior: "smooth" });
+            const scrollAmount = firstScrollRight ? 150 : getScrollAmountByScreenSize();
+            carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
             setShowLeftButton(true);
+            setFirstScrollRight(false);
         }
     };
 
@@ -26,7 +38,9 @@ const PopularMovies = () => {
     const scrollLeft = () => {
         const carousel = document.querySelector("#carousel");
         if (carousel) {
-            carousel.scrollBy({ left: -800, behavior: "smooth" });
+            const scrollAmount = firstScrollLeft ? 150 : getScrollAmountByScreenSize();
+            carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+            setFirstScrollLeft(false);
         }
     };
 
@@ -94,8 +108,8 @@ const PopularMovies = () => {
             <section className="min-h-screen bg-cinema bg-cover bg-no-repeat bg-bottom">
                 <Nav bgColorFixed="bg-[#000]" bgColor="bg-gradient-to-b from-[#000] to-[#00000048]" />
                 <section className="pt-32 px-20">
-                    <h1 className="text-6xl font-poppinsSBd leading-loose">Popping right now</h1>
-                    <h2 className="text-2xl">Top 10 Movies</h2>
+                    <h1 className="py-8 mb-14 sm:text-xl md:text-5xl lg:text-6xl font-poppinsSBd">Popping right now</h1>
+                    <h2 className="font-poppinsXLgItalic text-3xl">Top 10 Movies</h2>
                     <section className="mx-auto mt-10 text-md relative overflow-hidden bg-[#000000b7] rounded-xl">
                         {/* < Left button container */}
                         <div className={classNames("absolute top-0 left-0 pr-16 w-fit h-full flex bg-gradient-to-r from-[#000] via-[#000] to-[transparent] items-center z-20 transition-all", { "hidden": !showLeftButton })}>
@@ -114,17 +128,16 @@ const PopularMovies = () => {
                             {testMovies && testMovies.map((movieItem, index) => (
                                 <>
                                     <div key={index} className="carousel-item items-center" id={`slide${index + 1}`}>
-                                        <p key={index} className="font-freeman text-[240px] leading-none text-neutral-800 font-outline-2 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8 mr-[-27px]">{index + 1}</p>
+                                        <p key={index} className="font-freeman sm:text-[180px] lg:text-[240px] leading-none text-neutral-800 font-outline-2 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8 mr-[-27px]">{index + 1}</p>
                                         {/* Card with poster */}
                                         <div className="hover:scale-105 transition-all">
                                             <a className="relative cursor-pointer group" onClick={() => navigate(`/movie/${movieItem.id}`)}>
                                                 <img src={movieItem.poster} alt={movieItem.title} className="h-[270px] rounded-xl border border-[#000]" />
-                                                <p className="pb-2 absolute flex justify-center items-end group-hover:h-1/3 inset-x-0 bottom-0 rounded-b-xl text-center font-poppinsSBd bg-gradient-to-t from-[#000] via-[#000000e9] to-[transparent] opacity-0 group-hover:opacity-95 transition-all">{movieItem.title}</p>
+                                                {/* Overlay with title */}
+                                                <p className={classNames("p-2 absolute flex justify-center items-end group-hover:h-1/3 inset-x-0 bottom-0 rounded-b-xl text-center font-poppinsSBd bg-gradient-to-t from-[#000] via-[#000000e9] to-[transparent] opacity-0 group-hover:opacity-95 transition-all", { "text-xl": movieItem.title.length < 20, "text-sm": movieItem.title.length >= 20 })}>{movieItem.title}</p>
                                             </a>
-                                            {/* Overlay with title */}
-
                                         </div>
-                                    </div>
+                                    </div >
                                 </>
                             ))}
                         </article>
@@ -167,7 +180,7 @@ const PopularMovies = () => {
                     </section>
 
                 </section>
-            </section>
+            </section >
 
         </>
     );
