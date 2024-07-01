@@ -25,7 +25,7 @@ const Nav = ({ bgColorGradient, bgColorFixed }) => {
     return (
         <>
             <section className="relative">
-                <article className={classNames("px-20 py-8 flex justify-between items-center fixed top-0 left-0 right-0 shadow-xl z-50", { [bgColorGradient]: !isWindowScrolled, [bgColorFixed]: isWindowScrolled })}>
+                <article className={classNames("px-4 sm:px-10 md:px-20 xl:px-48 py-8 flex justify-between items-center fixed top-0 left-0 right-0 shadow-xl z-50", { [bgColorGradient]: !isWindowScrolled, [bgColorFixed]: isWindowScrolled })}>
                     <article className="flex">
                         <Link to="/"><img src={popcornIcon} alt="" className="size-12" /></Link>
                         <div>
