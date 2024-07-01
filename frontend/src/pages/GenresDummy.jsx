@@ -43,10 +43,16 @@ const Genres = () => {
     // }, [])
     {/* ---------- OLD FOR API DATA ------------- */ }
 
+    {/* Show all genres by default when first visiting the page and display page from top */ }
     useEffect(() => {
         handleSelectGenre("All");
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        })
     }, [])
 
+    {/* Function for selecting a genre */ }
     const handleSelectGenre = (genre, isTopFive) => {
         const scrollToGenreResultsSection = () => {
             const genreResultsSection = document.body.querySelector("#genreResults");
@@ -93,17 +99,16 @@ const Genres = () => {
 
     return (
         <>
-
             <section className="min-h-screen bg-cinema bg-contain bg-no-repeat bg-top">
                 <Nav bgColorFixed="bg-[#000]" bgColorGradient="bg-gradient-to-b from-[#000] to-[#00000048]" />
                 <section className="pt-32 px-20">
-                    <h1 className="text-6xl font-poppinsSBd">Movies by genre</h1>
+                    <h1 className="py-8 mb-14 sm:text-xl md:text-5xl lg:text-6xl font-poppinsSBd">Movies by genre</h1>
                     {/* Top 5 genres */}
-                    <article className="mt-20">
+                    <article className="">
                         <p className="text-3xl font-poppinsXLgItalic">TOP 5 Genres</p>
-                        <div className="mx-auto mt-4 grid max-w-lg grid-cols-4 items-center gap-x-4 gap-y-4 sm:max-w-xl sm:grid-cols-6 sm:gap-x-6 lg:mx-0 lg:max-w-none lg:grid-cols-5 text-center text-lg">
+                        <div className="mx-auto lg:mx-0 mt-4 max-w-lg sm:max-w-full lg:max-w-none grid items-center gap-4 md:grid-cols-3 lg:grid-cols-4    lg:grid-cols-5 text-center text-lg">
                             {genresTopFive && genresTopFive.map((genreItem, index) => (
-                                <a key={index} className="p-2 rounded-xl col-span-2 lg:col-span-1 w-full bg-[#fff] text-slate-950 hover:bg-rose-700 hover:text-[#fff] hover:cursor-pointer hover:border-rose-700 focus:outline-none focus:bg-rose-700 focus:text-[#fff]" href="" onClick={(e) => { e.preventDefault(); handleSelectGenre(genreItem, true) }}>{genreItem}</a>
+                                <a key={index} className={classNames("p-2 rounded-xl sm:grid-rows-2 lg:row-span-1 lg:h-full w-full bg-[#fff] text-slate-950 hover:bg-rose-700 hover:text-[#fff] hover:cursor-pointer hover:border-rose-700 focus:outline-none focus:bg-rose-700 focus:text-[#fff]", { "md:row-span-2": index === 2, "md:h-28": index === 2, "md:content-center": index === 2 })} href="" onClick={(e) => { e.preventDefault(); handleSelectGenre(genreItem, true) }}>{genreItem}</a>
                             ))}
                         </div>
                     </article>
@@ -111,7 +116,7 @@ const Genres = () => {
                     {/* All genres */}
                     <article className="mt-16 p-4 rounded-xl bg-neutral-900">
                         <details className="w-full" id="genreDropdownMenu">
-                            <summary className="w-full text-xl font-poppinsSBd hover:cursor-pointer">{selectedGenreByDropdown ? <>Selected genre: <span className="font-poppinsXLgItalic">{selectedGenreByDropdown}</span></> : "Select genre"}</summary>
+                            <summary className="w-full md:text-2xl lg:text-xl font-poppinsSBd hover:cursor-pointer">{selectedGenreByDropdown ? <>Selected genre: <span className="font-poppinsXLgItalic">{selectedGenreByDropdown}</span></> : "Select genre"}</summary>
                             <ul className="my-4 w-full rounded-xl dropdown-content menu z-[1] grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-2 bg-neutral-900">
                                 {genresList.map((genreItem, index) => (
                                     <li key={index}><a href="" className="font-poppinsLg text-lg hover:bg-rose-700 focus:outline-none focus:bg-rose-700" onClick={(e) => { e.preventDefault(); handleSelectGenre(genreItem, false) }}>{genreItem}</a></li>

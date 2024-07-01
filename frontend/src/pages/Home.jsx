@@ -16,7 +16,7 @@ const Home = () => {
                 <Nav bgColorFixed="bg-[#000]" bgColorGradient="bg-gradient-to-b from-[#000] to-[#00000048]" />
                 <section className="pt-32 px-20">
                     <article className="">
-                        <h1 className="py-8 sm:text-xl md:text-4xl lg:text-7xl font-poppinsSBd ">Popcorn Cinema Central</h1>
+                        <h1 className="py-8 sm:text-xl md:text-5xl lg:text-7xl font-poppinsSBd ">Popcorn Cinema Central</h1>
                         <article className="sm:w-full lg:w-2/3 xl:w-1/2">
                             <p className="sm:mb-8 xl:mb-12 sm:text-xl xl:text-2xl font-poppinsXLgItalic">Your poppin' online movie database</p>
                             {/* <p className="sm:text-base xl:text-lg">Check out (most of 😉) the greatest movies ever and get interesting insights on ratings and awards or watch the official trailers.</p> */}
