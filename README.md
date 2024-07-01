@@ -13,10 +13,10 @@ The reason why I started this project was, because I wanted to dive deeper into 
 ## Screenshots
 | Desktop view                    | Tablet view             | Smartphone view              |
 | ------------------------------- | ----------------------- | ---------------------------- |
-| <img src="./frontend/public/screenshot_movie_db2.png" width="450"> | <img src="./frontend/public/tablet_mdb_home.png" height="300"> | <img src="./frontend/public/tablet_mdb_home.png" height="300"> |
-| <img src="./frontend/public/screenshot_mdb_popular.png"  width="450"> | <img src="./frontend/public/tablet_mdb_popular.png" height="300"> | <img src="./frontend/public/tablet_mdb_home.png" height="300"> |
-| <img src="./frontend/public/screenshot_mdb_genres.png" width="450"> | <img src="./frontend/public/tablet_mdb_genres.png" height="300"> | <img src="./frontend/public/tablet_mdb_home.png" height="300"> |
-| <img src="./frontend/public/screenshot_mdb_details.png"  width="450"> | <img src="./frontend/public/tablet_mdb_movie_details.png" height="300"> | <img src="./frontend/public/tablet_mdb_home.png" height="300"> |
+| <img src="./frontend/public/screenshot_movie_db2.png" width="450"> | <img src="./frontend/public/tablet_mdb_home.png" height="300"> | <img src="./frontend/public/phone_mdb_home.png" height="300"> | 
+| <img src="./frontend/public/screenshot_mdb_popular.png"  width="450"> | <img src="./frontend/public/tablet_mdb_popular.png" height="300"> | <img src="./frontend/public/phone_mdb_popular.png" height="300"> |
+| <img src="./frontend/public/screenshot_mdb_genres.png" width="450"> | <img src="./frontend/public/tablet_mdb_genres.png" height="300"> | <img src="./frontend/public/phone_mdb_genre.png" height="300"> |
+| <img src="./frontend/public/screenshot_mdb_details.png"  width="450"> | <img src="./frontend/public/tablet_mdb_movie_details.png" height="300"> | <img src="./frontend/public/phone_mdb_movie_details.png" height="300"> |
 
    <!-- <img src="./frontend/public/screenshot_movie_db2.png" width="450"> ![Screenshot Home](./frontend/public/screenshot_movie_db2.png)
    <img src="./frontend/public/screenshot_mdb_popular.png" width="450">
