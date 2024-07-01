@@ -107,8 +107,8 @@ const PopularMovies = () => {
         <>
             <section className="min-h-screen bg-cinema bg-cover bg-no-repeat bg-bottom">
                 <Nav bgColorFixed="bg-[#000]" bgColor="bg-gradient-to-b from-[#000] to-[#00000048]" />
-                <section className="pt-32 px-20">
-                    <h1 className="py-8 mb-14 sm:text-xl md:text-5xl lg:text-6xl font-poppinsSBd">Popping right now</h1>
+                <section className="pt-32 px-4 sm:px-10 md:px-20 xl:px-48">
+                    <h1 className="py-8 md:mb-14 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-poppinsSBd">Popping right now</h1>
                     <h2 className="font-poppinsXLgItalic text-3xl">Top 10 Movies</h2>
                     <section className="mx-auto mt-10 text-md relative overflow-hidden bg-[#000000b7] rounded-xl">
                         {/* < Left button container */}

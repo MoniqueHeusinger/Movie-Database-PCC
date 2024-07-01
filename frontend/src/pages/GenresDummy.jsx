@@ -101,14 +101,14 @@ const Genres = () => {
         <>
             <section className="min-h-screen bg-cinema bg-contain bg-no-repeat bg-top">
                 <Nav bgColorFixed="bg-[#000]" bgColorGradient="bg-gradient-to-b from-[#000] to-[#00000048]" />
-                <section className="pt-32 px-20">
-                    <h1 className="py-8 mb-14 sm:text-xl md:text-5xl lg:text-6xl font-poppinsSBd">Movies by genre</h1>
+                <section className="pt-32 px-4 sm:px-10 md:px-20 xl:px-48">
+                    <h1 className="py-8 md:mb-14 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-poppinsSBd">Movies by genre</h1>
                     {/* Top 5 genres */}
                     <article className="">
                         <p className="text-3xl font-poppinsXLgItalic">TOP 5 Genres</p>
-                        <div className="mx-auto lg:mx-0 mt-4 max-w-lg sm:max-w-full lg:max-w-none grid items-center gap-4 md:grid-cols-3 lg:grid-cols-4    lg:grid-cols-5 text-center text-lg">
+                        <div className="mx-auto lg:mx-0 mt-6 lg:mt-4 max-w-lg sm:max-w-full lg:max-w-none grid items-center gap-4 sm:grid-cols-3 lg:grid-cols-4 lg:grid-cols-5 text-center text-lg">
                             {genresTopFive && genresTopFive.map((genreItem, index) => (
-                                <a key={index} className={classNames("p-2 rounded-xl sm:grid-rows-2 lg:row-span-1 lg:h-full w-full bg-[#fff] text-slate-950 hover:bg-rose-700 hover:text-[#fff] hover:cursor-pointer hover:border-rose-700 focus:outline-none focus:bg-rose-700 focus:text-[#fff]", { "md:row-span-2": index === 2, "md:h-28": index === 2, "md:content-center": index === 2 })} href="" onClick={(e) => { e.preventDefault(); handleSelectGenre(genreItem, true) }}>{genreItem}</a>
+                                <a key={index} className={classNames("p-2 rounded-xl sm:grid-rows-2 lg:row-span-1 lg:h-full w-full bg-[#fff] text-slate-950 hover:bg-rose-700 hover:text-[#fff] hover:cursor-pointer hover:border-rose-700 focus:outline-none focus:bg-rose-700 focus:text-[#fff]", { "sm:row-span-2": index === 2, "sm:h-28": index === 2, "sm:content-center": index === 2 })} href="" onClick={(e) => { e.preventDefault(); handleSelectGenre(genreItem, true) }}>{genreItem}</a>
                             ))}
                         </div>
                     </article>
