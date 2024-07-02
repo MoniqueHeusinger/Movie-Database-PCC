@@ -26,6 +26,7 @@ const Nav = ({ bgColorGradient, bgColorFixed }) => {
         <>
             <section className="relative">
                 <article className={classNames("px-4 sm:px-10 md:px-20 xl:px-48 py-8 flex justify-between items-center fixed top-0 left-0 right-0 shadow-xl z-50", { [bgColorGradient]: !isWindowScrolled, [bgColorFixed]: isWindowScrolled })}>
+                    {/* Logo */}
                     <article className="flex">
                         <Link to="/"><img src={popcornIcon} alt="" className="size-12" /></Link>
                         <div>
@@ -41,7 +42,21 @@ const Nav = ({ bgColorGradient, bgColorFixed }) => {
                             <li><NavLink to="/popular-movies" className="pb-2 hover:border-b-2">Popular</NavLink></li>
                             {/* <li><NavLink to="/trivia" className="pb-2 hover:border-b-2">Trivia</NavLink></li> */}
                             <li><NavLink to="/genres" className="mr-2 pb-2 hover:border-b-2">Genres</NavLink></li>
-                            <li className="pl-8 border-l-2"><Link className=""><img src={magnifyingGlass} alt="Search" className="ml-2 size-5 " /></Link></li>
+                            <li className="pl-8 border-l-2">
+                                <Link className=""><img src={magnifyingGlass} alt="Search" className="ml-2 size-5 " /></Link>
+                                {/* <div tabIndex={0} className="collapse">
+                                    <div className="collapse-title">
+                                        <Link className="">
+                                            <img src={magnifyingGlass} alt="Search" className="ml-2 size-5 " />
+                                        </Link>
+                                    </div>
+                                    <div className="collapse-content">
+                                        <input className="grow" type="text" placeholder="Search" />
+                                    </div>
+                                </div> */}
+
+
+                            </li>
                         </ul>
                     </nav>
                 </article>

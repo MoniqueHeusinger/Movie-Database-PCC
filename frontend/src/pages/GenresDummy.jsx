@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import Nav from "../components/Nav";
-import moviePosterExample from "../assets/img/movie-bg-test.jpg";
 import ButtonFilled from "../components/ButtonFilled";
 import ButtonOutline from "../components/ButtonOutline";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
 import { useMoviesDummy } from "../context/MoviesDummyContext";
+import cinemaBg from "../assets/img/cinema_seats.jpg";
 
 const Genres = () => {
     {/* ---------- OLD FOR API DATA ------------- */ }
@@ -99,7 +99,7 @@ const Genres = () => {
 
     return (
         <>
-            <section className="min-h-screen bg-cinema bg-contain bg-no-repeat bg-top">
+            <section className="min-h-screen bg-contain bg-no-repeat bg-top" style={{ backgroundImage: `linear-gradient(to right, rgba(0, 0, 0), rgba(20, 20, 20, 0.7), transparent), linear-gradient(to bottom, rgba(0, 0, 0), rgba(0, 0, 0, 0.3), transparent), url(${cinemaBg})` }}>
                 <Nav bgColorFixed="bg-[#000]" bgColorGradient="bg-gradient-to-b from-[#000] to-[#00000048]" />
                 <section className="pt-32 px-4 sm:px-10 md:px-20 xl:px-48">
                     <h1 className="py-8 md:mb-14 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-poppinsSBd">Movies by genre</h1>

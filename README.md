@@ -28,7 +28,7 @@ The reason why I started this project was, because I wanted to dive deeper into 
 
 ## Tech Stack
 
-**Client:** React, JavaScript, CSS, TailwindCSS
+React, JavaScript, CSS, TailwindCSS, DaisyUI
 
 
 ## Author 👩‍💻

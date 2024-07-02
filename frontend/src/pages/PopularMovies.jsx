@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import Nav from "../components/Nav";
-import starIcon from "../assets/img/icons/stern-icon.png";
+// import starIcon from "../assets/img/icons/stern-icon.png";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
 import { useMoviesDummy } from "../context/MoviesDummyContext";
+import cinemaBg from "../assets/img/cinema_seats.jpg";
 
 const PopularMovies = () => {
     const API_KEY_MOVIEDB = import.meta.env.VITE_API_KEY_MOVIEDB;
@@ -105,9 +106,9 @@ const PopularMovies = () => {
 
     return (
         <>
-            <section className="min-h-screen bg-cinema bg-cover bg-no-repeat bg-bottom">
+            <section className="min-h-screen bg-cover bg-no-repeat bg-bottom" style={{ backgroundImage: `linear-gradient(to right, rgba(0, 0, 0), rgba(20, 20, 20, 0.7), transparent), linear-gradient(to bottom, rgba(0, 0, 0), rgba(0, 0, 0, 0.3), transparent), url(${cinemaBg})` }}>
                 <Nav bgColorFixed="bg-[#000]" bgColor="bg-gradient-to-b from-[#000] to-[#00000048]" />
-                <section className="pt-32 px-4 sm:px-10 md:px-20 xl:px-48">
+                <section className="pt-32 pb-14 px-4 sm:px-10 md:px-20 xl:px-48">
                     <h1 className="py-8 md:mb-14 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-poppinsSBd">Popping right now</h1>
                     <h2 className="font-poppinsXLgItalic text-3xl">Top 10 Movies</h2>
                     <section className="mx-auto mt-10 text-md relative overflow-hidden bg-[#000000b7] rounded-xl">
@@ -132,7 +133,7 @@ const PopularMovies = () => {
                                         {/* Card with poster */}
                                         <div className="hover:scale-105 transition-all">
                                             <a className="relative cursor-pointer group" onClick={() => navigate(`/movie/${movieItem.id}`)}>
-                                                <img src={movieItem.poster} alt={movieItem.title} className="h-[270px] rounded-xl border border-[#000]" />
+                                                <img src={movieItem.poster} alt={movieItem.title} className="h-[200px] lg:h-[270px] rounded-xl border border-[#000]" />
                                                 {/* Overlay with title */}
                                                 <p className={classNames("p-2 absolute flex justify-center items-end group-hover:h-1/3 inset-x-0 bottom-0 rounded-b-xl text-center font-poppinsSBd bg-gradient-to-t from-[#000] via-[#000000e9] to-[transparent] opacity-0 group-hover:opacity-95 transition-all", { "text-xl": movieItem.title.length < 20, "text-sm": movieItem.title.length >= 20 })}>{movieItem.title}</p>
                                             </a>

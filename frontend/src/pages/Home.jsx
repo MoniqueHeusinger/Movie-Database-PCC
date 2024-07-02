@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import ButtonFilled from "../components/ButtonFilled";
 import ButtonOutline from "../components/ButtonOutline";
 import Nav from "../components/Nav";
+import homeBg from "../assets/img/cinema-bg.jpg";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Home = () => {
 
     return (
         <>
-            <section className="min-h-screen bg-home-bg-default bg-cover bg-no-repeat ">
+            <section className="min-h-screen bg-cover bg-no-repeat " style={{ backgroundImage: `linear-gradient(to right, rgba(0, 0, 0), rgba(20, 20, 20, 0.7), transparent), linear-gradient(to bottom, rgba(0, 0, 0), rgba(0, 0, 0, 0.3), transparent), url(${homeBg})` }}>
                 <Nav bgColorFixed="bg-[#000]" bgColorGradient="bg-gradient-to-b from-[#000] to-[#00000048]" />
                 <section className="pt-32 px-4 sm:px-10 md:px-20 xl:px-48">
                     <article className="">
