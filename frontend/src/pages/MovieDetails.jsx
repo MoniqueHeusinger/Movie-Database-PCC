@@ -5,6 +5,7 @@ import loadingGif from "../assets/img/icons/popcorn-animated.gif";
 import starIcon from "../assets/img/icons/stern-icon.png";
 import classNames from "classnames";
 import ButtonFilled from "../components/ButtonFilled";
+import Footer from "../components/Footer";
 import { useMoviesDummy } from "../context/MoviesDummyContext"
 
 const MovieDetails = () => {
@@ -225,6 +226,7 @@ const MovieDetails = () => {
                     </article>
                 </section>
             </section>
+            <Footer />
         </>
     );
 }

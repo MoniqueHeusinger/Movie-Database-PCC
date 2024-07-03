@@ -13,7 +13,6 @@ const Nav = ({ bgColorGradient, bgColorFixed }) => {
     const testMovies = useMoviesDummy();
     const navigate = useNavigate();
 
-
     useEffect(() => {
         const handleWindowScroll = () => {
             const isScrolled = window.scrollY > 60;
@@ -84,9 +83,6 @@ const Nav = ({ bgColorGradient, bgColorFixed }) => {
                                         <p className={classNames("card-title", { "text-base": movieItem.title.length <= 17, "text-sm": movieItem.title.length > 17 })}>{movieItem.title}</p>
                                     </div>
                                     <div className="basis-12 rounded-r-xl" style={{ backgroundImage: `url(${movieItem.poster})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}></div>
-                                    {/* <figure>
-                                        <img src={movieItem.poster} alt="" className="h-16" />
-                                    </figure> */}
                                 </div>
                             ))}
                         </div>
