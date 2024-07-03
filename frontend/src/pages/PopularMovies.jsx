@@ -131,12 +131,13 @@ const PopularMovies = () => {
                                     <div key={index} className="carousel-item items-center" id={`slide${index + 1}`}>
                                         <p key={index} className="font-freeman sm:text-[180px] lg:text-[240px] leading-none text-neutral-800 font-outline-2 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8 mr-[-27px]">{index + 1}</p>
                                         {/* Card with poster */}
-                                        <div className="hover:scale-105 transition-all">
-                                            <a className="relative cursor-pointer group" onClick={() => navigate(`/movie/${movieItem.id}`)}>
+                                        <div className="relative hover:scale-105 group transition-all">
+                                            <a className=" cursor-pointer " onClick={() => navigate(`/movie/${movieItem.id}`)}>
                                                 <img src={movieItem.poster} alt={movieItem.title} className="h-[200px] lg:h-[270px] rounded-xl border border-[#000]" />
-                                                {/* Overlay with title */}
-                                                <p className={classNames("p-2 absolute flex justify-center items-end group-hover:h-1/3 inset-x-0 bottom-0 rounded-b-xl text-center font-poppinsSBd bg-gradient-to-t from-[#000] via-[#000000e9] to-[transparent] opacity-0 group-hover:opacity-95 transition-all", { "text-xl": movieItem.title.length < 20, "text-sm": movieItem.title.length >= 20 })}>{movieItem.title}</p>
                                             </a>
+                                            {/* Overlay with title */}
+                                            <p className={classNames("p-2 absolute right-0 left-0 bottom-0 top-[70%] flex justify-center items-end rounded-b-xl text-center  font-poppinsSBd bg-gradient-to-t from-[#000] via-[#000000e9] to-[transparent] opacity-0 group-hover:opacity-95 transition-all", { "text-xl": movieItem.title.length < 20, "text-sm": movieItem.title.length >= 20 })}>{movieItem.title}</p>
+
                                         </div>
                                     </div >
                                 </>
