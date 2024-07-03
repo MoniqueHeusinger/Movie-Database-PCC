@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 // import starIcon from "../assets/img/icons/stern-icon.png";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
@@ -182,7 +183,7 @@ const PopularMovies = () => {
 
                 </section>
             </section >
-
+            <Footer />
         </>
     );
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import ButtonFilled from "../components/ButtonFilled";
 import ButtonOutline from "../components/ButtonOutline";
+import Footer from "../components/Footer";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
 import { useMoviesDummy } from "../context/MoviesDummyContext";
@@ -153,6 +154,7 @@ const Genres = () => {
                     </article>
                 </section>
             </section>
+            <Footer />
         </>
     );
 }
