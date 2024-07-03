@@ -66,7 +66,6 @@ const PopularMovies = () => {
                 setShowRightButton(false)
             }
         }
-
     };
 
     // Attach the scroll event listener
